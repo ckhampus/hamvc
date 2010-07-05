@@ -31,6 +31,7 @@ class Dispatcher extends Singleton {
 			}
 			
 			$segments = explode('/', $path);
+			var_dump($segemnts);
 		
 			foreach($segments as $s) {				
 				if(isset($controller)) {
@@ -51,10 +52,10 @@ class Dispatcher extends Singleton {
 				array_shift($segments);
 			}
 
-			if(isset($controller)) {
+			if(isset($controller) AND !empty($controller)) {
 				$controller .= '/'.$segments[0];
 			}
-			else {					
+			else if(!empty($segments[0])) {					
 				$controller = $segments[0];
 			}
 

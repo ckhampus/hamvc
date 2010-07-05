@@ -1,6 +1,10 @@
 <?php
 class Request {
 	public function load($controller, $action = NULL, $parameters = NULL) {
+		if(empty($controller)) {
+			$controller = DEFAULT_CONTROLLER;
+		}
+	
 		include_once(APP_PATH.'/controllers/'.$controller.'.php');
 		
 		$c = new $controller;
