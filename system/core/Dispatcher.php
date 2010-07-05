@@ -3,7 +3,7 @@ class Dispatcher extends Singleton {
 	public static function dispatch() {
 		$route = &$GLOBALS['route'];
 		
-		$parsed_url = parse_url(substr($_SERVER['REQUEST_URI'], strlen('/projects/hamvc/')));
+		$parsed_url = parse_url(substr($_SERVER['REQUEST_URI'], strlen(BASE_PATH)));
 		$controller = NULL;
 		$action = NULL;
 		$parameters = NULL;
