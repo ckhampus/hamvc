@@ -31,7 +31,6 @@ class Dispatcher extends Singleton {
 			}
 			
 			$segments = explode('/', $path);
-			var_dump($segemnts);
 		
 			foreach($segments as $s) {				
 				if(isset($controller)) {
